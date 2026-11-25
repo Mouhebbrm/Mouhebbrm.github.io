@@ -10,6 +10,10 @@ fetch("https://raw.githubusercontent.com/Mouhebbrm/Mouhebbrm.github.io/81a7c805e
     html = html.replace("https://github.com/search?q=Mouheb%20Bairam&amp;type=users", "https://github.com/Mouhebbrm");
     document.open(); document.write(html); document.close();
   })
-  .catch(() => { document.body.innerHTML = "<p>Le portfolio n’a pas pu se charger. <a href="https://github.com/Mouhebbrm/Mouhebbrm.github.io">Réessayer depuis GitHub</a>.</p>"; });
+  .catch(() => {
+    const message = document.createElement("p");
+    message.textContent = "Le portfolio n’a pas pu se charger. Réessayez dans quelques instants.";
+    document.body.replaceChildren(message);
+  });
 </script>
 </body></html>
