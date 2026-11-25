@@ -1,1 +1,15 @@
-
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mouheb Bairam · Portfolio</title></head>
+<body>
+<p>Chargement du portfolio…</p>
+<script>
+fetch("https://raw.githubusercontent.com/Mouhebbrm/Mouhebbrm.github.io/81a7c805e06c529524f9c985c7eca853330616f7/Mouheb_Bairam_EPortfolio%20(1).html")
+  .then(response => { if (!response.ok) throw new Error("Portfolio introuvable"); return response.text(); })
+  .then(html => {
+    html = html.replace("https://github.com/search?q=Mouheb%20Bairam&amp;type=users", "https://github.com/Mouhebbrm");
+    document.open(); document.write(html); document.close();
+  })
+  .catch(() => { document.body.innerHTML = "<p>Le portfolio n’a pas pu se charger. <a href="https://github.com/Mouhebbrm/Mouhebbrm.github.io">Réessayer depuis GitHub</a>.</p>"; });
+</script>
+</body></html>
